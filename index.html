@@ -1,373 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Alp Yaldaz</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Alp Yaldaz</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Alp Yaldaz Portfolio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #5F6F65;
+            margin: 0;  
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+        }
+        
+        .welcome-container {
+            position: relative;
+            display: inline-block;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        svg {
+            width: 60vw;
+            max-width: 800px;
+            height: auto;
+            cursor: pointer;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+
+        svg path {
+            fill: #F8EDED;
+        }
+
+        .right_door {
+            transition: transform 1s ease;
+        }
+
+        svg:hover .right_door {
+            transform: rotateY(45deg);
+            transform-origin: left center;
+        }
+        
+        .enter-button {
+            position: absolute;
+            top: 45%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.5s ease 0.8s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .enter-button:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+        
+        .welcome-container:hover .enter-button {
+            opacity: 1;
+        }
+        
+        .welcome-text {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #F8EDED;
+            opacity: 0.9;
+        }
+        
+        .welcome-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+        
+        .welcome-text p {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+            font-weight: 300;
+            color: #D0D0D0;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            svg {
+                width: 90vw;
+            }
+            
+            .welcome-text h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .welcome-text p {
+                font-size: 1rem;
+            }
+            
+            .enter-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-container">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="500.000000pt" height="261.000000pt" viewBox="0 0 500.000000 261.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,261.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+            <path class="main" d="M2406 2599 c-184 -11 -322 -27 -463 -55 -208 -41 -183 -16 -303 -292 -57 -130 -125 -293 -152 -362 -27 -69 -57 -145 -66 -169 -14 -34 -25 -47 -48 -53 -16 -5 -174 -38 -352 -73 -428 -86 -568 -132 -645 -209 -19 -19 -55 -67 -80 -108 -83 -132 -129 -285 -149 -491 l-12 -127 -62 -29 -61 -28 -7 -119 c-3 -65 -2 -122 2 -126 5 -5 89 -12 186 -15 l177 -6 35 -67 c96 -183 303 -292 493 -260 151 25 307 138 376 272 l30 58 1225 -1 1225 0 29 -61 c88 -185 324 -305 528 -268 148 26 303 141 365 269 31 65 44 72 146 72 28 0 80 3 115 5 l62 6 0 77 c0 43 -3 105 -6 139 l-7 61 -66 23 c-66 23 -66 23 -72 68 -44 287 -72 408 -126 545 -38 96 -107 216 -145 252 -41 39 -227 102 -407 139 -62 13 -115 24 -116 26 -2 2 -19 44 -40 93 -87 211 -219 442 -371 646 l-64 87 -113 21 c-327 61 -694 82 -1061 60z m664 -39 c145 -13 235 -25 377 -51 l112 -21 43 -56 c157 -203 282 -417 379 -652 30 -72 54 -117 66 -121 10 -4 59 -15 108 -23 107 -20 233 -57 332 -98 63 -26 76 -36 106 -81 103 -155 169 -360 211 -652 14 -96 46 -386 46 -415 0 -6 -27 -10 -63 -10 l-63 0 10 66 c34 232 -114 473 -342 556 -81 30 -243 30 -324 0 -121 -44 -232 -142 -289 -254 -52 -102 -72 -236 -50 -330 l9 -38 -647 0 c-355 0 -899 -3 -1208 -7 l-562 -6 6 94 c7 115 -7 186 -53 277 -100 201 -317 311 -524 268 -203 -43 -361 -194 -401 -384 -11 -56 -8 -200 6 -234 7 -16 -2 -18 -94 -18 l-101 0 0 48 c0 104 21 392 35 477 34 212 134 420 237 495 76 55 242 104 563 165 277 53 418 85 432 98 6 7 35 75 63 151 29 77 103 257 165 400 91 208 118 262 137 269 84 32 302 69 498 86 140 12 647 13 780 1z m1291 -1586 c201 -59 339 -245 339 -458 0 -192 -102 -353 -278 -438 -58 -28 -80 -33 -163 -36 -148 -6 -248 29 -351 126 -100 94 -148 206 -148 348 0 209 132 392 328 455 72 23 200 24 273 3z m-3394 -12 c173 -54 307 -220 322 -399 3 -43 3 -104 -1 -137 -18 -137 -125 -275 -266 -343 -69 -33 -87 -38 -172 -41 -83 -3 -103 -1 -163 22 -112 42 -184 102 -241 198 -163 278 -28 621 277 703 74 20 175 18 244 -3z m3988 -356 c2 -6 6 -57 9 -114 l5 -103 -42 3 -42 3 -12 115 c-6 63 -12 120 -12 127 -1 15 89 -14 94 -31z m-4830 -163 l-7 -63 -41 0 -42 0 3 78 c4 110 7 119 50 141 l37 19 3 -56 c2 -32 1 -85 -3 -119z"/>
+            <path class="right_door" d="M2410 2493 c-200 -9 -561 -59 -581 -80 -4 -5 -79 -192 -167 -418 l-161 -410 -20 -145 c-32 -228 -44 -446 -38 -650 4 -102 10 -209 13 -238 l7 -52 593 0 592 0 6 73 c3 39 8 322 11 627 3 305 8 723 12 928 l6 372 -104 -2 c-57 -1 -133 -3 -169 -5z m247 -345 c-4 -183 -9 -596 -12 -918 -3 -322 -8 -613 -11 -647 l-6 -63 -573 0 -574 0 -8 57 c-15 107 -9 566 10 723 33 268 36 279 201 698 85 217 157 396 160 400 12 11 196 42 346 57 165 16 229 20 379 23 l94 2 -6 -332z"/>
+            <path class="right_door" d="M2195 2389 c-121 -11 -288 -38 -297 -47 -6 -6 -268 -699 -268 -709 0 -2 211 -3 469 -3 l469 0 6 158 c3 86 9 259 12 385 l6 227 -153 -1 c-85 -1 -194 -5 -244 -10z m371 -206 c-3 -109 -9 -273 -12 -365 l-6 -168 -444 0 c-244 0 -444 2 -444 5 0 10 244 661 250 668 19 22 319 54 519 56 l143 1 -6 -197z"/>
+            <path class="right_door" d="M2332 1443 l3 -67 100 3 c55 1 103 5 107 7 5 3 8 29 8 58 l0 53 -46 7 c-26 3 -76 6 -111 6 l-64 0 3 -67z m167 41 c28 -6 31 -10 31 -45 l0 -39 -90 0 -90 0 0 45 0 45 59 0 c32 0 73 -3 90 -6z"/>
+            <path class="left_door" d="M2745 2488 c-3 -7 -4 -456 -3 -998 l3 -985 436 -3 437 -2 6 22 c3 13 6 39 6 58 0 57 28 159 63 229 40 82 140 185 231 237 36 21 66 45 66 54 0 8 -11 132 -24 276 -27 287 -30 301 -124 489 -89 178 -330 560 -359 569 -44 13 -326 47 -469 56 -212 13 -264 13 -269 -2z m275 -18 c218 -15 452 -49 471 -69 24 -23 189 -283 265 -416 36 -63 88 -166 115 -229 l50 -114 25 -273 c14 -151 22 -275 17 -276 -5 -2 -36 -21 -70 -44 -167 -108 -262 -263 -281 -455 l-7 -69 -422 -3 -423 -2 0 980 0 980 58 0 c31 0 122 -5 202 -10z"/>
+            <path class="left_door" d="M2813 2115 c4 -159 7 -331 7 -382 l0 -95 489 4 c269 2 493 6 497 11 18 18 -74 219 -174 381 -50 82 -195 299 -212 319 -12 13 -240 36 -433 43 l-180 7 6 -288z m436 245 c170 -18 145 -1 263 -178 128 -190 201 -318 245 -426 l32 -81 -57 -6 c-31 -4 -245 -7 -474 -8 l-418 -1 0 103 c0 57 -3 220 -7 362 l-6 258 162 -6 c90 -4 207 -12 260 -17z"/>
+            <path class="left_door" d="M3540 1465 l0 -65 69 0 c37 0 89 3 115 6 l46 7 0 58 0 59 -115 0 -115 0 0 -65z m210 6 c0 -35 -3 -39 -31 -45 -17 -3 -60 -6 -95 -6 l-64 0 0 45 0 45 95 0 95 0 0 -39z"/>
+            <path class="right_wheel" d="M4168 786 c-167 -46 -250 -214 -188 -380 39 -104 126 -167 241 -174 85 -5 151 22 213 88 59 63 76 106 76 192 0 186 -170 323 -342 274z m142 -22 c39 -12 66 -29 104 -67 59 -60 76 -104 76 -198 0 -186 -201 -306 -369 -222 -55 27 -105 84 -128 146 -15 42 -16 135 -2 178 26 76 99 144 177 165 63 17 79 17 142 -2z"/>
+            <path class="left_wheel" d="M744 764 c-23 -8 -60 -30 -82 -49 -146 -125 -114 -373 60 -459 214 -107 454 119 368 346 -25 68 -105 147 -167 166 -53 16 -128 14 -179 -4z m204 -30 c85 -42 142 -134 142 -229 0 -85 -44 -162 -123 -216 -85 -58 -207 -50 -287 18 -57 49 -82 103 -88 190 -6 88 17 143 83 201 77 68 182 82 273 36z"/>
+            </g>
+        </svg>
+        
+        <button class="enter-button" onclick="enterPortfolio()">
+            Enter Portfolio
+        </button>
+        
+        <div class="welcome-text">
+            <h1>ALP YALDAZ</h1>
+            <p>Full-Stack Developer</p>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="assests/AlpPicture.jpg" alt="Alp Yaldaz profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Alp Yaldaz</h1>
-        <p class="section__text__p2">Full-Stack Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/AlpYaldaz1.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="assests/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/alpyaldaz/'"
-          />
-          <img
-            src="assests/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/alpyaldaz'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="assests/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>4 Months Internship<br />Full-Stack Development at Math Europe</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="assests/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. in IT<br />Collegium Da Vinci</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              I am an Information Technology student at Collegium Da Vinci with experience in web development using HTML, CSS, JavaScript, and WordPress. I also work with Python and Linux. I completed a 700-hour internship as a Full-Stack Developer. I’m passionate about building user-friendly, responsive websites and constantly improving my coding skills.
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Skills</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Wordpress</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Skills</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C++</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Linux</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assests/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">E-commerce Website</h2>
-            <p style="margin: 1rem 0;">Responsive online shopping platform built with HTML, CSS and JavaScript. Includes product listings and cart system.</p>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assests/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Personal Portfolio Website</h2>
-            <div class="btn-container">
-              <p style="margin: 1rem 0;"></p>Developed a responsive portfolio site using HTML, CSS, and JavaScript to showcase projects and skills.</p>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assests/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="assests/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:examplemail@gmail.com">alpyaldaz@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="assests/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Alp Yaldaz. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    </div>
+
+    <script>
+        function enterPortfolio() {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '0';
+            
+            setTimeout(() => {
+                window.location.href = './portfolio.html';
+            }, 500);
+        }
+        
+        // Car door click functionality
+        document.querySelectorAll('.right_door').forEach(door => {
+            door.addEventListener('click', enterPortfolio);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                enterPortfolio();
+            }
+        });
+    </script>
+</body>
 </html>

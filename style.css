@@ -430,3 +430,44 @@ footer {
 footer p {
   text-align: center;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff; 
+  background-color: transparent;
+  border: none;
+}
+
+.close:hover {
+  color: #ff4d4d; 
+}
+
+.project-title {
+  cursor: pointer;
+}
+
+

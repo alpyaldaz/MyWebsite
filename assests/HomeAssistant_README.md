@@ -1,0 +1,2 @@
+# 🌱 Home Plant Care Assistant (IoT Project)
+Developed a cloud-connected IoT solution that monitors soil moisture in real-time and notifies users when plants need watering. The system uses a simulated device to send data to the cloud, accessible via a REST API, with alerts triggered when moisture drops below a set threshold. Helps prevent over- or under-watering and supports smart home integration.
