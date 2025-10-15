@@ -227,6 +227,12 @@ section {
   border: none;
   cursor: pointer;
 }
+.btn,
+.btn:hover,
+.btn:focus {
+  text-decoration: none !important;
+  text-underline-offset: 0 !important;
+}
 
 .btn-color-1,
 .btn-color-2 {
