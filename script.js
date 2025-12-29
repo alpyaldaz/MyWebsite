@@ -76,6 +76,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Scroll Progress Bar
+window.addEventListener('scroll', function() {
+  const scrollProgress = document.querySelector('.scroll-progress');
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercentage = (scrollTop / scrollHeight) * 100;
+  scrollProgress.style.width = scrollPercentage + '%';
+});
+
 // Handle project clicks for better UX
 document.addEventListener('DOMContentLoaded', function() {
   // Add click handlers for project titles and descriptions
