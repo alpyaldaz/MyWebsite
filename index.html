@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Alp Yaldaz | Data Analyst</title>
+    <meta name="description" content="Alp Yaldaz - Data Analyst Portfolio. Python, SQL, Power BI, ETL Pipelines, Statistical Analysis." />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css" />
@@ -12,33 +13,45 @@
   </head>
   <body>
     <div class="scroll-progress"></div>
+
     <nav id="desktop-nav">
       <div class="logo">Alp Yaldaz</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span class="theme-icon">&#9790;</span>
+      </button>
     </nav>
+
     <nav id="hamburger-nav">
       <div class="logo">Alp Yaldaz</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <span class="theme-icon">&#9790;</span>
+        </button>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- HERO SECTION -->
     <section id="profile">
       <div class="section__pic-container">
         <img src="assests/Alphoto.png" alt="Alp Yaldaz profile picture" />
@@ -46,8 +59,11 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Alp Yaldaz</h1>
+        <p class="section__text__p2">
+          <span class="typing-text"></span><span class="cursor">|</span>
+        </p>
         <div class="btn-container">
-          <a href="assests/AlpYaldazzCcv .pdf" download class="btn btn-color-2">
+          <a href="assests/AlpYaldaz_CV.pdf" download class="btn btn-color-2">
             Download CV
           </a>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
@@ -70,8 +86,8 @@
         </div>
       </div>
     </section>
-    
-    <!-- About Me Section -->
+
+    <!-- ABOUT SECTION -->
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
@@ -79,27 +95,19 @@
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="assests/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
+              <img src="assests/experience.png" alt="Experience icon" class="icon" />
               <h3>Experience</h3>
-              <p>4 Months Internship<br />Full-Stack Development at Math Europe</p>
+              <p>Data Analyst Intern<br />Math Europe (2024)</p>
             </div>
             <div class="details-container">
-              <img
-                src="assests/education.png"
-                alt="Education icon"
-                class="icon"
-              />
+              <img src="assests/education.png" alt="Education icon" class="icon" />
               <h3>Education</h3>
-              <p>B.Sc. in IT<br />Collegium Da Vinci</p>
+              <p>BSc Information Technology<br />Collegium Da Vinci (2026)</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              I am an Information Technology student at Collegium Da Vinci with experience in web development using HTML, CSS, JavaScript, and WordPress. I also work with Python and Linux. I completed a 700-hour internship as a Full-Stack Developer. I'm passionate about building user-friendly, responsive websites and constantly improving my coding skills.
+              I am a recent IT graduate with hands-on experience in data analysis, ETL pipelines, and cloud technologies. During my internship at Math Europe, I collected and analyzed real-time IoT sensor data, built automated data pipelines via Azure IoT Hub, and created KPI reports using Python and SQL. I'm passionate about turning raw data into actionable insights and eager to grow my career in a data-driven environment.
             </p>
           </div>
         </div>
@@ -111,129 +119,103 @@
         onclick="location.href='./#experience'"
       />
     </section>
-    
-    <!-- Experience Section -->
+
+    <!-- SKILLS SECTION -->
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Skills</h2>
+            <h2 class="experience-sub-title">Data & Analytics</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
+                  <h3>Python</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
+                  <h3>SQL</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
+                  <h3>Power BI</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
+                  <h3>Pandas / NumPy</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>WordPress</h3>
-                  <p>Experienced</p>
+                  <h3>Statistical Methods</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+                </div>
+              </article>
+              <article>
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <div>
+                  <h3>Matplotlib / Seaborn</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Backend & Other Skills</h2>
+            <h2 class="experience-sub-title">Tools & Technologies</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>PostgreSQL</h3>
-                  <p>Basic</p>
+                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>C++</h3>
-                  <p>Basic</p>
+                  <h3>BigQuery</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
-                  <h3>Linux</h3>
-                  <p>Basic</p>
+                  <h3>Azure / GCP</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
                 </div>
               </article>
               <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Git</h3>
-                  <p>Experienced</p>
+                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                </div>
+              </article>
+              <article>
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <div>
+                  <h3>Linux</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+                </div>
+              </article>
+              <article>
+                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <div>
+                  <h3>Jupyter Notebooks</h3>
+                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
             </div>
@@ -247,90 +229,121 @@
         onclick="location.href='./#projects'"
       />
     </section>
-    
-    <!-- Project Section -->
+
+    <!-- PROJECTS SECTION -->
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
-        <div class="about-containers">
-          <!-- Project 1 -->
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assests/portfolio.png"
-                alt="Portfolio Website"
-                class="project-img"
-              />
+        <div class="about-containers projects-grid">
+
+          <!-- Project 1: E-Commerce Data Analysis -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <rect x="8" y="12" width="48" height="40" rx="4" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <polyline points="14,42 24,30 32,36 42,22 50,28" fill="none" stroke="var(--secondary-color)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="24" cy="30" r="2.5" fill="var(--secondary-color)"/>
+                <circle cx="32" cy="36" r="2.5" fill="var(--secondary-color)"/>
+                <circle cx="42" cy="22" r="2.5" fill="var(--secondary-color)"/>
+              </svg>
             </div>
-            <h2 class="experience-sub-title project-title">Personal Portfolio Website</h2>
-            <p>Developed a responsive portfolio site using HTML, CSS, and JavaScript to showcase projects and skills.</p>
+            <h2 class="experience-sub-title project-title">E-Commerce Data Analysis</h2>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Pandas</span>
+            </div>
+            <p>End-to-end analysis on 50,000+ transactions: sales trends, customer segmentation, and KPI dashboards.</p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alpyaldaz/MyWebsite.git'"
-              >
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/ecommerce-data-analysis'">
                 Github
               </button>
             </div>
           </div>
-          
-          <!-- Project 2 -->
-          <div class="details-container color-container">
-            <h2 class="experience-sub-title project-title" onclick="openModal('./assests/NowShow_App_README.md')">
-              NowShow Quiz App
-            </h2>
-            <p onclick="openModal('./assests/NowShow_App_README.md')">
-              Quiz system tailored for live shows — click to view full feature breakdown.
-            </p>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alpyaldaz/NowShow_App'"
-              >
-                Github
-              </button>
+
+          <!-- Project 2: IoT Data Pipeline -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <rect x="12" y="8" width="16" height="16" rx="3" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <rect x="36" y="8" width="16" height="16" rx="3" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <rect x="24" y="40" width="16" height="16" rx="3" fill="none" stroke="var(--secondary-color)" stroke-width="2.5"/>
+                <line x1="20" y1="24" x2="32" y2="40" stroke="var(--primary-color)" stroke-width="2"/>
+                <line x1="44" y1="24" x2="32" y2="40" stroke="var(--primary-color)" stroke-width="2"/>
+              </svg>
             </div>
-          </div>
-          
-          <!-- Project 3 -->
-          <div class="details-container color-container">
             <h2 class="experience-sub-title project-title" onclick="openModal('./assests/HomeAssistant_README.md')">
-              Home Plant Care Assistant
+              IoT Data Pipeline & Analytics
             </h2>
+            <div class="project-tags">
+              <span class="tag">Azure IoT</span>
+              <span class="tag">Python</span>
+              <span class="tag">ETL</span>
+            </div>
             <p onclick="openModal('./assests/HomeAssistant_README.md')">
-              IoT system for smart plant care — click to view full feature breakdown.
+              Automated IoT pipeline collecting sensor data via Azure IoT Hub with real-time alerting and time-series visualization.
             </p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alpyaldaz/IOTtask'"
-              >
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/IOTtask'">
                 Github
               </button>
             </div>
           </div>
-          
-          <!-- Project 4 -->
-          <div class="details-container color-container">
-            <h2 class="experience-sub-title project-title" onclick="openModal('./assests/PongGame_README.md')">
-              Unity Pong Game
-            </h2>
-            <p onclick="openModal('./assests/PongGame_README.md')">
-              Unity Pong Game — click to view full feature breakdown.
-            </p>
+
+          <!-- Project 3: NeeDo Marketplace -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <rect x="10" y="14" width="44" height="36" rx="6" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <rect x="18" y="22" width="12" height="12" rx="2" fill="var(--secondary-color)" opacity="0.3" stroke="var(--secondary-color)" stroke-width="1.5"/>
+                <rect x="34" y="22" width="12" height="12" rx="2" fill="var(--secondary-color)" opacity="0.3" stroke="var(--secondary-color)" stroke-width="1.5"/>
+                <line x1="18" y1="40" x2="46" y2="40" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h2 class="experience-sub-title project-title">NeeDo Marketplace App</h2>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">BLoC</span>
+            </div>
+            <p>Real-time serverless marketplace with Clean Architecture, BLoC state management, and data integrity via transactions.</p>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alpyaldaz/UnityPongCdv'"
-              >
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/Needo'">
+                Github
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Portfolio Website -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <rect x="8" y="12" width="48" height="36" rx="4" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <line x1="8" y1="22" x2="56" y2="22" stroke="var(--primary-color)" stroke-width="2"/>
+                <circle cx="14" cy="17" r="2" fill="var(--secondary-color)"/>
+                <circle cx="20" cy="17" r="2" fill="var(--secondary-color)"/>
+                <circle cx="26" cy="17" r="2" fill="var(--secondary-color)"/>
+                <text x="20" y="38" font-family="monospace" font-size="10" fill="var(--secondary-color)">&lt;/&gt;</text>
+              </svg>
+            </div>
+            <h2 class="experience-sub-title project-title">Portfolio Website</h2>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <p>Responsive portfolio with scroll animations, dark mode, and modal-based project details.</p>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/MyWebsite'">
                 Github
               </button>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Modal for README -->
       <div id="readmeModal" class="modal">
         <div class="modal-content">
@@ -338,7 +351,7 @@
           <div id="readme-text" class="markdown-body">Loading README...</div>
         </div>
       </div>
-      
+
       <img
         src="assests/arrow.png"
         alt="Arrow icon"
@@ -347,44 +360,36 @@
       />
     </section>
 
-    <!-- Contact Me Section -->
+    <!-- CONTACT SECTION -->
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="assests/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
+          <img src="assests/email.png" alt="Email icon" class="icon contact-icon email-icon" />
           <p><a href="mailto:alpyaldaz59@gmail.com">alpyaldaz59@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
-          <img
-            src="assests/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
+          <img src="assests/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
           <p><a href="https://www.linkedin.com/in/alpyaldaz/">LinkedIn</a></p>
         </div>
       </div>
     </section>
-    
+
     <footer>
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#experience">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2025 Alp Yaldaz. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 Alp Yaldaz. All Rights Reserved.</p>
     </footer>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
