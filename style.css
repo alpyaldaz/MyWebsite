@@ -845,3 +845,102 @@ footer .nav-links a:hover {
 .text-container {
   text-align: justify;
 }
+
+/* DUAL NAME / IDENTITY */
+.name-alt {
+  display: inline-flex;
+  align-items: stretch;
+  margin: 0 auto 1.25rem;
+  padding: 0.35rem 0.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  background: rgba(212, 182, 142, 0.08);
+}
+
+.name-alt__part {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+}
+
+.name-alt__sep {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-color);
+  opacity: 0.6;
+}
+
+.name-alt__label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--secondary-color);
+}
+
+.name-alt__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+body.dark-mode .name-alt {
+  background: rgba(212, 182, 142, 0.12);
+}
+
+.contact-note {
+  max-width: 42rem;
+  margin: 1.75rem auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.contact-note strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* PROJECT GROUPS */
+.project-group-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 2.5rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.project-group-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* TOOLS ROW, wider grid so the full-width card breathes */
+.tools-container {
+  gap: 2rem 2.5rem;
+  justify-content: flex-start;
+}
+
+.tools-container article {
+  width: 12rem;
+}
+
+.project-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-body);
+  opacity: 0.85;
+}

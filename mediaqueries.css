@@ -323,3 +323,32 @@
     font-size: 0.65rem;
   }
 }
+
+/* DUAL NAME + PROJECT GROUPS, small screens */
+@media screen and (max-width: 600px) {
+  .name-alt {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 0.6rem;
+  }
+  .name-alt__part {
+    justify-content: center;
+    padding: 0.2rem 0.5rem;
+  }
+  .name-alt__sep {
+    width: auto;
+    height: 1px;
+    margin: 0 0.5rem;
+  }
+  .project-group-title {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+  .contact-note {
+    font-size: 0.82rem;
+    padding: 0 1rem;
+  }
+  .tools-container article {
+    width: 10rem;
+  }
+}

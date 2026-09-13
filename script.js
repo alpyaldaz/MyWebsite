@@ -30,10 +30,10 @@ function toggleTheme() {
 // TYPING ANIMATION
 const typingTexts = [
   "Data Analyst",
+  "Software Developer",
   "Python & SQL",
-  "Turning Data into Insights",
-  "BI & Dashboards",
-  "ETL Pipelines"
+  "Next.js & FastAPI",
+  "Turning Data into Products"
 ];
 
 let textIndex = 0;
