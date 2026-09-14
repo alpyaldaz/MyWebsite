@@ -1,25 +1,27 @@
 <!DOCTYPE html>
+<!-- Template rendered by build.py into both sites. Edit here, never in dist/. -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alp Yaldaz (Alp Yıldız) | Data Analyst &amp; Software Developer</title>
-    <meta name="description" content="Alp Yaldaz in Europe, Alp Yıldız in Türkiye, one person, two records. Data Analyst and Software Developer: Python, SQL, Power BI, ETL pipelines, Next.js, FastAPI, Flutter." />
-    <meta name="author" content="Alp Yaldaz" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <title>{{NAME}} ({{ALT_NAME}}) | Data Analyst &amp; Software Developer</title>
+    <meta name="description" content="{{META_NAMES}} Data Analyst and Software Developer: Python, SQL, Power BI, ETL pipelines, Next.js, FastAPI, Flutter." />
+    <meta name="author" content="{{NAME}}" />
+    <link rel="stylesheet" href="{{ROOT}}style.css" />
+    <link rel="stylesheet" href="{{ROOT}}mediaqueries.css" />
+    <link rel="canonical" href="{{PAGE_URL}}" />{{ALTERNATE_LINKS}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Alp Yaldaz",
-        "alternateName": "Alp Yıldız",
+        "name": "{{NAME}}",
+        "alternateName": "{{ALT_NAME}}",
         "jobTitle": ["Data Analyst", "Software Developer"],
-        "email": "mailto:alpyaldaz59@gmail.com",
-        "url": "https://alpyaldaz.online",
+        "email": "mailto:{{EMAIL_PRIMARY}}",
+        "url": "{{PAGE_URL}}",
         "sameAs": [
           "https://www.linkedin.com/in/alpyaldaz/",
           "https://github.com/alpyaldaz"
@@ -35,7 +37,7 @@
     <div class="scroll-progress"></div>
 
     <nav id="desktop-nav">
-      <div class="logo">Alp Yaldaz</div>
+      <div class="logo">{{NAME}}</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -44,14 +46,18 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <span class="theme-icon">&#9790;</span>
-      </button>
+      <div class="nav-actions">
+        <a class="lang-toggle" href="{{LANG_HREF}}" hreflang="{{LANG_HREFLANG}}" lang="{{LANG_HREFLANG}}" aria-label="{{LANG_ARIA}}">{{LANG_LABEL}}</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <span class="theme-icon">&#9790;</span>
+        </button>
+      </div>
     </nav>
 
     <nav id="hamburger-nav">
-      <div class="logo">Alp Yaldaz</div>
+      <div class="logo">{{NAME}}</div>
       <div style="display:flex;align-items:center;gap:1rem;">
+        <a class="lang-toggle" href="{{LANG_HREF}}" hreflang="{{LANG_HREFLANG}}" lang="{{LANG_HREFLANG}}" aria-label="{{LANG_ARIA}}">{{LANG_LABEL}}</a>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <span class="theme-icon">&#9790;</span>
         </button>
@@ -74,28 +80,18 @@
     <!-- HERO SECTION -->
     <section id="profile">
       <div class="section__pic-container">
-        <img src="assests/alp-profile.jpg" alt="Alp Yaldaz profile picture" />
+        <img src="{{ROOT}}assests/alp-profile.jpg" alt="{{NAME}} profile picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Alp Yaldaz</h1>
-        <p class="name-alt">
-          <span class="name-alt__part">
-            <span class="name-alt__label">Europe</span>
-            <span class="name-alt__value">Alp Yaldaz</span>
-          </span>
-          <span class="name-alt__sep" aria-hidden="true"></span>
-          <span class="name-alt__part">
-            <span class="name-alt__label">TÜRKİYE</span>
-            <span class="name-alt__value">Alp Yıldız</span>
-          </span>
-        </p>
+        <h1 class="title">{{NAME}}</h1>
+        {{NAME_ALT_BLOCK}}
         <p class="section__text__p2">
-          <span class="typing-text"></span><span class="cursor">|</span>
+          <span class="typing-text" data-words='["Data Analyst", "Software Developer", "Python &amp; SQL", "Next.js &amp; FastAPI", "Turning Data into Products"]'></span><span class="cursor">|</span>
         </p>
         <div class="btn-container">
-          <a href="assests/AlpYaldaz_CV.pdf" download class="btn btn-color-2">
-            Download CV
+          <a href="{{ROOT}}{{CV_FILE}}" target="_blank" rel="noopener" class="btn btn-color-2">
+            View CV
           </a>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
             Contact Info
@@ -103,13 +99,13 @@
         </div>
         <div id="socials-container">
           <img
-            src="assests/linkedin.png"
+            src="{{ROOT}}assests/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
             onclick="location.href='https://www.linkedin.com/in/alpyaldaz/'"
           />
           <img
-            src="assests/github.png"
+            src="{{ROOT}}assests/github.png"
             alt="My Github profile"
             class="icon"
             onclick="location.href='https://github.com/alpyaldaz'"
@@ -126,7 +122,7 @@
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img src="assests/experience.png" alt="Experience icon" class="icon" />
+              <img src="{{ROOT}}assests/experience.png" alt="Experience icon" class="icon" />
               <h3>Experience</h3>
               <p>
                 Data Analyst Intern, Math Europe (2024)<br />
@@ -134,12 +130,12 @@
               </p>
             </div>
             <div class="details-container">
-              <img src="assests/education.png" alt="Education icon" class="icon" />
+              <img src="{{ROOT}}assests/education.png" alt="Education icon" class="icon" />
               <h3>Education</h3>
               <p>BSc Information Technology<br />Collegium Da Vinci (2026)</p>
             </div>
             <div class="details-container">
-              <img src="assests/checkmark.png" alt="Focus icon" class="icon" />
+              <img src="{{ROOT}}assests/checkmark.png" alt="Focus icon" class="icon" />
               <h3>Focus</h3>
               <p>Analytics &amp; BI<br />Full-Stack Product Development</p>
             </div>
@@ -155,7 +151,7 @@
         </div>
       </div>
       <img
-        src="assests/arrow.png"
+        src="{{ROOT}}assests/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
         onclick="location.href='./#experience'"
@@ -172,49 +168,49 @@
             <h2 class="experience-sub-title">Data &amp; Analytics</h2>
             <div class="article-container">
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Python</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>SQL</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Pandas / NumPy</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Matplotlib / Seaborn</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Power BI</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>ETL Pipelines</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Statistical Methods</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
@@ -226,49 +222,49 @@
             <h2 class="experience-sub-title">Software Development</h2>
             <div class="article-container">
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>TypeScript / JavaScript</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Next.js / React</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>FastAPI</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Flutter / Dart</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>React Native / Expo</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>REST API Design</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Prisma / SQLAlchemy</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
@@ -282,63 +278,63 @@
             <h2 class="experience-sub-title">Data Stores, Cloud &amp; Tooling</h2>
             <div class="article-container tools-container">
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>PostgreSQL</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>SQLite</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Supabase / Firebase</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>BigQuery</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Azure / GCP</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Docker</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Git</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Linux</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
                 </div>
               </article>
               <article>
-                <img src="assests/checkmark.png" alt="Skill icon" class="icon" />
+                <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Jupyter Notebooks</h3>
                   <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
@@ -349,7 +345,7 @@
         </div>
       </div>
       <img
-        src="assests/arrow.png"
+        src="{{ROOT}}assests/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
         onclick="location.href='./#projects'"
@@ -402,7 +398,7 @@
                 <line x1="44" y1="24" x2="32" y2="40" stroke="var(--primary-color)" stroke-width="2"/>
               </svg>
             </div>
-            <h2 class="experience-sub-title project-title" onclick="openModal('./assests/HomeAssistant_README.md')">
+            <h2 class="experience-sub-title project-title" onclick="openModal('{{ROOT}}assests/HomeAssistant_README.md')">
               IoT Data Pipeline &amp; Analytics
             </h2>
             <div class="project-tags">
@@ -410,7 +406,7 @@
               <span class="tag">Python</span>
               <span class="tag">ETL</span>
             </div>
-            <p onclick="openModal('./assests/HomeAssistant_README.md')">
+            <p onclick="openModal('{{ROOT}}assests/HomeAssistant_README.md')">
               Automated IoT pipeline collecting sensor data via Azure IoT Hub with real-time alerting and time-series visualization.
             </p>
             <div class="btn-container">
@@ -495,7 +491,7 @@
               <span class="tag">Docker</span>
             </div>
             <p>Licensed SaaS running in a real café: QR menu for guests, live order flow over Server-Sent Events, table and takeaway tickets, payments, and reporting in one admin panel.</p>
-            <p class="project-note">Private repository &mdash; walkthrough available on request</p>
+            <p class="project-note">Private repository: walkthrough available on request</p>
           </div>
 
           <!-- Project: Review Insight -->
@@ -514,7 +510,7 @@
               <span class="tag">TypeScript</span>
             </div>
             <p>Mobile app that turns scattered venue reviews into location-aware insights, with Supabase-backed auth and data and Expo Router navigation.</p>
-            <p class="project-note">Private repository &mdash; walkthrough available on request</p>
+            <p class="project-note">Private repository: walkthrough available on request</p>
           </div>
 
           <!-- Project: NeeDo Marketplace -->
@@ -559,7 +555,7 @@
               <span class="tag">CSS</span>
               <span class="tag">JavaScript</span>
             </div>
-            <p>Responsive portfolio with scroll animations, dark mode, and modal-based project details.</p>
+            <p>Responsive portfolio built from one source into two sites and two languages, with scroll animations, dark mode, and modal-based project details.</p>
             <div class="btn-container">
               <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/MyWebsite'">
                 Github
@@ -578,7 +574,7 @@
       </div>
 
       <img
-        src="assests/arrow.png"
+        src="{{ROOT}}assests/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
         onclick="location.href='./#contact'"
@@ -591,20 +587,20 @@
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img src="assests/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-          <p><a href="mailto:alpyaldaz59@gmail.com">alpyaldaz59@gmail.com</a></p>
+          <img src="{{ROOT}}assests/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+          <p><a href="mailto:{{EMAIL_PRIMARY}}">{{EMAIL_PRIMARY}}</a></p>
         </div>
         <div class="contact-info-container">
-          <img src="assests/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-          <p><a href="mailto:alpyildiz59@gmail.com">alpyildiz59@gmail.com</a></p>
+          <img src="{{ROOT}}assests/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+          <p><a href="mailto:{{EMAIL_SECONDARY}}">{{EMAIL_SECONDARY}}</a></p>
         </div>
         <div class="contact-info-container">
-          <img src="assests/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+          <img src="{{ROOT}}assests/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
           <p><a href="https://www.linkedin.com/in/alpyaldaz/">LinkedIn</a></p>
         </div>
       </div>
       <p class="contact-note">
-        For contracts, invoices, and background checks: <strong>Alp Yaldaz</strong> is my name on European records, <strong>Alp Yıldız</strong> on Turkish ones. Please use whichever matches your jurisdiction.
+        For contracts, invoices, and background checks: <strong>Alp Yaldaz</strong> is my name on European records, <strong>Alp Yıldız</strong> on Turkish ones. Please use whichever matches your jurisdiction.<br />{{OTHER_SITE_LABEL}} <a href="https://{{OTHER_SITE_HOST}}/">{{OTHER_SITE_HOST}}</a>
       </p>
     </section>
 
@@ -619,9 +615,9 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2026 Alp Yaldaz &middot; Alp Yıldız. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 {{NAME}} &middot; {{ALT_NAME}}. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ROOT}}script.js"></script>
   </body>
 </html>

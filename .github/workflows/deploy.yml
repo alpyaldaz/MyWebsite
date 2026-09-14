@@ -1,0 +1,76 @@
+# Builds both portfolio sites from src/ and publishes them:
+#   alpyaldaz.online  -> this repository's GitHub Pages (Actions deployment)
+#   alpyildiz.online  -> force-push to alpyaldaz/alpyildiz-online, served by its Pages
+# The push to the second repository uses a deploy key (secret YILDIZ_DEPLOY_KEY),
+# which does not expire, unlike a personal access token.
+name: Deploy both sites
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-sites
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build both sites
+        run: python build.py
+      - name: Upload alpyaldaz.online for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/yaldaz
+      - name: Upload alpyildiz.online
+        uses: actions/upload-artifact@v4
+        with:
+          name: yildiz-site
+          path: dist/yildiz
+          include-hidden-files: true
+
+  deploy-yaldaz:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://alpyaldaz.online/
+    steps:
+      - uses: actions/deploy-pages@v4
+
+  deploy-yildiz:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: yildiz-site
+          path: site
+      - name: Push to alpyildiz-online
+        env:
+          DEPLOY_KEY: ${{ secrets.YILDIZ_DEPLOY_KEY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # GitHub's published host key, pinned instead of trusting ssh-keyscan.
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > ~/.ssh/known_hosts
+          cd site
+          git init -q -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy from MyWebsite@${GITHUB_SHA::7}"
+          git push --force git@github.com:alpyaldaz/alpyildiz-online.git main

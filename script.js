@@ -28,13 +28,12 @@ function toggleTheme() {
 })();
 
 // TYPING ANIMATION
-const typingTexts = [
-  "Data Analyst",
-  "Software Developer",
-  "Python & SQL",
-  "Next.js & FastAPI",
-  "Turning Data into Products"
-];
+// Each language page lists its own words in data-words on .typing-text.
+let typingTexts = ["Data Analyst", "Software Developer", "Python & SQL", "Next.js & FastAPI", "Turning Data into Products"];
+try {
+  const words = JSON.parse(document.querySelector(".typing-text")?.dataset.words || "null");
+  if (Array.isArray(words) && words.length) typingTexts = words;
+} catch (e) {}
 
 let textIndex = 0;
 let charIndex = 0;
@@ -73,12 +72,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // MODAL
+const isTurkish = document.documentElement.lang === "tr";
+
 function openModal(filePath) {
   const modal = document.getElementById("readmeModal");
   const readmeText = document.getElementById("readme-text");
 
   modal.style.display = "block";
-  readmeText.innerHTML = "Loading README...";
+  readmeText.innerHTML = isTurkish ? "README yükleniyor..." : "Loading README...";
 
   fetch(filePath)
     .then(response => {
@@ -89,7 +90,7 @@ function openModal(filePath) {
       readmeText.innerHTML = marked.parse(data);
     })
     .catch(error => {
-      readmeText.innerHTML = '<div style="text-align:center;padding:2rem;"><h3>Error loading README</h3><p style="color:#666;">' + error.message + '</p></div>';
+      readmeText.innerHTML = '<div style="text-align:center;padding:2rem;"><h3>' + (isTurkish ? "README yüklenemedi" : "Error loading README") + '</h3><p style="color:#666;">' + error.message + '</p></div>';
     });
 }
 
