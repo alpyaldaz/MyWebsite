@@ -222,12 +222,20 @@ a:hover {
 }
 
 .hamburger-icon {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 24px;
   width: 30px;
   cursor: pointer;
+}
+
+/* The icon is 30x24; the invisible pseudo-element widens the touch target to 44x44. */
+.hamburger-icon::before {
+  content: "";
+  position: absolute;
+  inset: -10px -7px;
 }
 
 .hamburger-icon span {
@@ -625,6 +633,13 @@ article .icon {
   cursor: default;
 }
 
+/* Name and bar share one flex item. Letting it take the rest of the row gives every
+   bar the same length, so the fill percentage reads the same for every skill. */
+article > div {
+  flex: 1;
+  min-width: 0;
+}
+
 article {
   transition: all 0.3s ease;
 }
@@ -809,6 +824,26 @@ footer {
   background: linear-gradient(135deg, var(--primary-color) 0%, #003d7a 100%);
   border-radius: 2rem 2rem 0 0;
   margin-top: 4rem;
+}
+
+/* The footer reuses <nav>, which otherwise inherits the sticky white top bar and
+   hides the links in a light box. Reset it so they sit on the footer gradient. */
+footer nav,
+body.dark-mode footer nav {
+  position: static;
+  height: auto;
+  padding: 1rem 0;
+  background: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+body.dark-mode footer .nav-links a:hover {
+  color: #ffffff;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 footer p {
