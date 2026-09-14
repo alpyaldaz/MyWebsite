@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{NAME}} ({{ALT_NAME}}) | Veri Analisti ve Yazılım Geliştirici</title>
-    <meta name="description" content="{{META_NAMES}} Veri analisti ve yazılım geliştirici: Python, SQL, Power BI, ETL veri hatları, Next.js, FastAPI, Flutter." />
+    <meta name="description" content="{{META_NAMES}} Veri analisti ve yazılım geliştirici: Python, SQL, ETL veri hatları, Next.js, FastAPI, Flutter." />
     <meta name="author" content="{{NAME}}" />
     <link rel="stylesheet" href="{{ROOT}}style.css" />
     <link rel="stylesheet" href="{{ROOT}}mediaqueries.css" />
@@ -162,112 +162,79 @@
     <section id="experience">
       <p class="section__text__p1">Neler Yapıyorum</p>
       <h1 class="title">Yetenekler</h1>
+      <!-- Grouped by how deeply each skill has been used, with the project that shows it.
+           Every line was checked against the project code on 2026-09-14. -->
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Veri ve Analitik</h2>
-            <div class="article-container">
+            <h2 class="experience-sub-title">Canlı Ürünlerde Kullandıklarım</h2>
+            <div class="article-container skill-rows">
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>Python</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                  <h3>Python &middot; FastAPI &middot; SQLAlchemy</h3>
+                  <p class="skill-evidence">Yolio backend'i</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>SQL</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                  <h3>PostgreSQL &middot; Docker</h3>
+                  <p class="skill-evidence">Yolio</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>Pandas / NumPy</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                  <h3>TypeScript &middot; Next.js &middot; Prisma</h3>
+                  <p class="skill-evidence">QR sipariş ve POS, Malin Cloud</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>Matplotlib / Seaborn</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Power BI</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>ETL Veri Hatları</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>İstatistiksel Yöntemler</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+                  <h3>Git &middot; GitHub Actions</h3>
+                  <p class="skill-evidence">Tüm projeler, Yolio'da CI</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Yazılım Geliştirme</h2>
-            <div class="article-container">
+            <h2 class="experience-sub-title">Projelerde Kullandıklarım</h2>
+            <div class="article-container skill-rows">
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>TypeScript / JavaScript</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                  <h3>Flutter &middot; Dart</h3>
+                  <p class="skill-evidence">NeeDo, Dükkan Defter</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>Next.js / React</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                  <h3>React Native &middot; Expo &middot; Supabase</h3>
+                  <p class="skill-evidence">Review Insight</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>FastAPI</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                  <h3>Firebase &middot; BLoC</h3>
+                  <p class="skill-evidence">NeeDo</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>Flutter / Dart</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+                  <h3>Pandas</h3>
+                  <p class="skill-evidence">Olist e-ticaret analizi</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>React Native / Expo</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>REST API Tasarımı</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Prisma / SQLAlchemy</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+                  <h3>Azure IoT Hub</h3>
+                  <p class="skill-evidence">Math Europe stajı</p>
                 </div>
               </article>
             </div>
@@ -275,69 +242,20 @@
         </div>
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Veri Depoları, Bulut ve Araçlar</h2>
-            <div class="article-container tools-container">
+            <h2 class="experience-sub-title">Üzerinde Çalıştıklarım</h2>
+            <div class="article-container skill-rows">
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>PostgreSQL</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                  <h3>Analitik SQL</h3>
+                  <p class="skill-evidence">JOIN, CTE, window function</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
                 <div>
-                  <h3>SQLite</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Supabase / Firebase</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>BigQuery</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Azure / GCP</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Docker</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Git</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Linux</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-                </div>
-              </article>
-              <article>
-                <img src="{{ROOT}}assests/checkmark.png" alt="Yetenek simgesi" class="icon" />
-                <div>
-                  <h3>Jupyter Notebooks</h3>
-                  <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                  <h3>Veri görselleştirme</h3>
+                  <p class="skill-evidence">Matplotlib</p>
                 </div>
               </article>
             </div>
@@ -375,11 +293,10 @@
             <h2 class="experience-sub-title project-title">E-Ticaret Veri Analizi</h2>
             <div class="project-tags">
               <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Matplotlib</span>
               <span class="tag">Pandas</span>
+              <span class="tag">Matplotlib</span>
             </div>
-            <p>Olist Brezilya e-ticaret veri seti, yaklaşık 100.000 sipariş: beş tablo birleştirilerek aylık sipariş trendleri, talep yoğunluğu ve kategori bazında gelir.</p>
+            <p>Olist Brezilya e-ticaret veri setinde Pandas ile analiz, yaklaşık 100.000 sipariş: aylık sipariş hacmi, en çok sipariş veren şehirler ve en çok sipariş alan ürün kategorileri.</p>
             <div class="btn-container">
               <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/ecommerce-data-analysis'">
                 Github

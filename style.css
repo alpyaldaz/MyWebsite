@@ -826,6 +826,27 @@ footer {
   margin-top: 4rem;
 }
 
+/* Skills are grouped by how deeply they have been used, each with the project that
+   shows it. This replaced percentage bars that no one could check. */
+.skill-rows {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1.1rem;
+}
+
+.skill-rows article {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.skill-evidence {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin-top: 0.15rem;
+}
+
 /* The footer reuses <nav>, which otherwise inherits the sticky white top bar and
    hides the links in a light box. Reset it so they sit on the footer gradient. */
 footer nav,
