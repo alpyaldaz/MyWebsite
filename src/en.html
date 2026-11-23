@@ -137,12 +137,12 @@
             <div class="details-container">
               <img src="{{ROOT}}assests/checkmark.png" alt="Focus icon" class="icon" />
               <h3>Focus</h3>
-              <p>Analytics &amp; BI<br />Full-Stack Product Development</p>
+              <p>Data &amp; Analytics<br />Full-Stack Product Development</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              I work across two closely connected disciplines: <strong>data analysis</strong> and <strong>software development</strong>. On the data side, my internship at Math Europe had me collecting real-time IoT sensor data, building automated pipelines on Azure IoT Hub, and producing KPI reports with Python and SQL. On the software side, I design and ship complete products end to end: a trip-cost platform with a FastAPI backend plus web and mobile clients, an accounting platform for Turkish accountants, and a licensed QR ordering &amp; POS system running in a real café.
+              I work across two closely connected disciplines: <strong>data analysis</strong> and <strong>software development</strong>. On the data side, my internship at Math Europe had me collecting real-time IoT sensor data, building automated pipelines on Azure IoT Hub, and producing KPI reports with Python and SQL. On the software side, I design and ship complete products end to end: a trip-cost platform with a FastAPI backend plus web and mobile clients, a Chrome extension that shows the estimated net salary on job ads in Germany, and offline-first apps built for small businesses such as a dessert shop and an auto repair shop.
             </p>
             <p style="margin-top:1rem;">
               The two roles feed each other: the products I build generate the data, and the analysis decides what gets built next. A note on my name: I go by <strong>Alp Yaldaz</strong> in Europe and <strong>Alp Yıldız</strong> in Türkiye. Both appear on official records in their own country, same person, two spellings of one surname.
@@ -187,7 +187,7 @@
                 <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>TypeScript &middot; Next.js &middot; Prisma</h3>
-                  <p class="skill-evidence">QR ordering &amp; POS, Malin Cloud</p>
+                  <p class="skill-evidence">Yolio web, EU Job Lens</p>
                 </div>
               </article>
               <article>
@@ -206,14 +206,14 @@
                 <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>Flutter &middot; Dart</h3>
-                  <p class="skill-evidence">NeeDo, Dükkan Defter</p>
+                  <p class="skill-evidence">NeeDo, Dükkan Defter, Oto Servis Defteri</p>
                 </div>
               </article>
               <article>
                 <img src="{{ROOT}}assests/checkmark.png" alt="Skill icon" class="icon" />
                 <div>
                   <h3>React Native &middot; Expo &middot; Supabase</h3>
-                  <p class="skill-evidence">Review Insight</p>
+                  <p class="skill-evidence">BenceYe</p>
                 </div>
               </article>
               <article>
@@ -354,10 +354,33 @@
               <span class="tag">Flutter</span>
               <span class="tag">Google Maps API</span>
             </div>
-            <p>Turkish road-trip cost calculator. Combines Maps routing, live fuel prices, vehicle specs, and the HGS toll system into accurate estimates: API plus web and mobile clients.</p>
+            <p>Turkish road-trip cost calculator. Combines Maps routing, live fuel prices, vehicle specs, and the HGS toll system into one trip cost: API plus web and mobile clients, live on the App Store, Google Play and the web.</p>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/yolio-backend'">
-                Github
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://yolio.com.tr'">
+                Website
+              </button>
+            </div>
+          </div>
+
+          <!-- Project: EU Job Lens -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <circle cx="28" cy="28" r="16" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <line x1="40" y1="40" x2="54" y2="54" stroke="var(--primary-color)" stroke-width="3" stroke-linecap="round"/>
+                <text x="21" y="34" font-family="sans-serif" font-size="16" font-weight="bold" fill="var(--secondary-color)">&euro;</text>
+              </svg>
+            </div>
+            <h2 class="experience-sub-title project-title">EU Job Lens: Chrome Extension</h2>
+            <div class="project-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Chrome Extension</span>
+              <span class="tag">Vitest</span>
+            </div>
+            <p>Shows the estimated monthly net salary and the visa, German language and remote work facts on LinkedIn, StepStone and Indeed job ads in Germany. The tax engine matches the official German calculator on all 21 reference cases, and everything runs in the browser.</p>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://chromewebstore.google.com/detail/eu-job-lens/mhjdmpabbkikfhbigddiofbcnpodnajm'">
+                Chrome Web Store
               </button>
             </div>
           </div>
@@ -379,11 +402,7 @@
               <span class="tag">Auth.js</span>
             </div>
             <p>Multi-tenant accounting platform for Turkish accountants: uniform chart of accounts, double-entry journals with live balance validation, trial balance, general ledger, and full audit logging.</p>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alpyaldaz/MalinCloud'">
-                Github
-              </button>
-            </div>
+            <p class="project-note">Private repository: walkthrough available on request</p>
           </div>
 
           <!-- Project: QR Ordering & POS -->
@@ -400,18 +419,18 @@
                 <line x1="36" y1="48" x2="48" y2="48" stroke="var(--secondary-color)" stroke-width="2.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <h2 class="experience-sub-title project-title">QR Ordering &amp; POS SaaS</h2>
+            <h2 class="experience-sub-title project-title">QR Ordering &amp; POS (Demo)</h2>
             <div class="project-tags">
               <span class="tag">Next.js</span>
               <span class="tag">Prisma</span>
               <span class="tag">SSE</span>
               <span class="tag">Docker</span>
             </div>
-            <p>Licensed SaaS running in a real café: QR menu for guests, live order flow over Server-Sent Events, table and takeaway tickets, payments, and reporting in one admin panel.</p>
+            <p>Demo built for a family café: QR menu for guests, live order flow over Server-Sent Events, table and takeaway tickets, payments, and reporting in one admin panel.</p>
             <p class="project-note">Private repository: walkthrough available on request</p>
           </div>
 
-          <!-- Project: Review Insight -->
+          <!-- Project: BenceYe -->
           <div class="details-container color-container project-card">
             <div class="project-icon">
               <svg viewBox="0 0 64 64" width="60" height="60">
@@ -419,14 +438,35 @@
                 <circle cx="32" cy="30" r="6" fill="none" stroke="var(--secondary-color)" stroke-width="2.5"/>
               </svg>
             </div>
-            <h2 class="experience-sub-title project-title">Review Insight</h2>
+            <h2 class="experience-sub-title project-title">BenceYe: Restaurant Decision App</h2>
             <div class="project-tags">
               <span class="tag">React Native</span>
-              <span class="tag">Expo</span>
               <span class="tag">Supabase</span>
+              <span class="tag">Claude API</span>
               <span class="tag">TypeScript</span>
             </div>
-            <p>Mobile app that turns scattered venue reviews into location-aware insights, with Supabase-backed auth and data and Expo Router navigation.</p>
+            <p>Restaurant decision app for Türkiye: Claude summarises what a venue's reviews say about each aspect into a validated schema, so places can be compared side by side. Pre-release.</p>
+            <p class="project-note">Private repository: walkthrough available on request</p>
+          </div>
+
+          <!-- Project: Dukkan Defter -->
+          <div class="details-container color-container project-card">
+            <div class="project-icon">
+              <svg viewBox="0 0 64 64" width="60" height="60">
+                <rect x="14" y="10" width="36" height="44" rx="3" fill="none" stroke="var(--primary-color)" stroke-width="2.5"/>
+                <line x1="22" y1="10" x2="22" y2="54" stroke="var(--primary-color)" stroke-width="2"/>
+                <line x1="28" y1="22" x2="44" y2="22" stroke="var(--secondary-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="28" y1="30" x2="44" y2="30" stroke="var(--secondary-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="28" y1="38" x2="38" y2="38" stroke="var(--secondary-color)" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h2 class="experience-sub-title project-title">Dükkan Defter: Stock &amp; Sales App</h2>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Supabase</span>
+            </div>
+            <p>Offline-first stock and sales app built for a dessert shop and modelled on the owner's paper ledger, with Android and Windows builds that sync across devices through Supabase.</p>
             <p class="project-note">Private repository: walkthrough available on request</p>
           </div>
 
